@@ -30,3 +30,11 @@ StonePaperScissorsTest >> testScissorsBeatsPaper [
 	result := game play: #scissors against: #paper.
 	self assert: result equals: #scissors
 ]
+
+{ #category : 'tests' }
+StonePaperScissorsTest >> testScissorsDrawsWithScissors [
+
+	| result |
+	result := game play: #scissors against: #scissors.
+	self assert: result equals: #draw
+]

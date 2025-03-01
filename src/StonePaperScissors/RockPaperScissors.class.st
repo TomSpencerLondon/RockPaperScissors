@@ -7,7 +7,8 @@ Class {
 
 { #category : 'playing' }
 RockPaperScissors >> play: first against: second [
-
+	
+	first = second ifTrue: [ ^ #draw ].
 	first = #paper ifTrue: [ ^ #paper ].
 	^ #scissors
 ]
