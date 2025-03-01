@@ -7,5 +7,7 @@ Class {
 
 { #category : 'as yet unclassified' }
 RockPaperScissors >> play: first against: second [
-	^ #paper
+
+	first = #paper ifTrue: [ ^ #paper ].
+	^ #scissors
 ]
