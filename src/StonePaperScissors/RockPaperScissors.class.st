@@ -5,7 +5,7 @@ Class {
 	#package : 'StonePaperScissors'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'playing' }
 RockPaperScissors >> play: first against: second [
 
 	first = #paper ifTrue: [ ^ #paper ].
