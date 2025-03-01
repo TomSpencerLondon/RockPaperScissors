@@ -1,15 +1,24 @@
 Class {
 	#name : 'StonePaperScissorsTest',
 	#superclass : 'TestCase',
+	#instVars : [
+		'game'
+	],
 	#category : 'StonePaperScissors-Tests',
 	#package : 'StonePaperScissors-Tests'
 }
 
+{ #category : 'running' }
+StonePaperScissorsTest >> setUp [
+
+	super setUp.
+	game := RockPaperScissors new
+]
+
 { #category : 'tests' }
 StonePaperScissorsTest >> testPaperBeatsRock [
 
-	| game result |
-	game := RockPaperScissors new.
+	| result |
 	result := game play: #paper against: #rock.
 	self assert: result equals: #paper
 ]
@@ -17,8 +26,7 @@ StonePaperScissorsTest >> testPaperBeatsRock [
 { #category : 'tests' }
 StonePaperScissorsTest >> testScissorsBeatsPaper [
 
-	| game result |
-	game := RockPaperScissors new.
+	| result |
 	result := game play: #scissors against: #paper.
 	self assert: result equals: #scissors
 ]
