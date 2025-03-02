@@ -24,5 +24,6 @@ RockPaperScissors >> play: first against: second [
 	
 	first = second ifTrue: [ ^ #draw ].
 	first = #paper ifTrue: [ ^ #paper ].
+	first = #rock ifTrue: [ ^ #paper ].
 	^ #scissors
 ]
