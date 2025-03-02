@@ -1,22 +1,22 @@
 Class {
-	#name : 'StonePaperScissorsTest',
+	#name : 'RockPaperScissorsTest',
 	#superclass : 'TestCase',
 	#instVars : [
 		'game'
 	],
-	#category : 'StonePaperScissors-Tests',
-	#package : 'StonePaperScissors-Tests'
+	#category : 'RockPaperScissors-Tests',
+	#package : 'RockPaperScissors-Tests'
 }
 
 { #category : 'running' }
-StonePaperScissorsTest >> setUp [
+RockPaperScissorsTest >> setUp [
 
 	super setUp.
 	game := RockPaperScissors new
 ]
 
 { #category : 'tests' }
-StonePaperScissorsTest >> testPaperBeatsRock [
+RockPaperScissorsTest >> testPaperBeatsRock [
 
 	| result |
 	result := game play: #paper against: #rock.
@@ -24,7 +24,7 @@ StonePaperScissorsTest >> testPaperBeatsRock [
 ]
 
 { #category : 'tests' }
-StonePaperScissorsTest >> testScissorsBeatsPaper [
+RockPaperScissorsTest >> testScissorsBeatsPaper [
 
 	| result |
 	result := game play: #scissors against: #paper.
@@ -32,7 +32,7 @@ StonePaperScissorsTest >> testScissorsBeatsPaper [
 ]
 
 { #category : 'tests' }
-StonePaperScissorsTest >> testScissorsDrawsWithScissors [
+RockPaperScissorsTest >> testScissorsDrawsWithScissors [
 
 	| result |
 	result := game play: #scissors against: #scissors.

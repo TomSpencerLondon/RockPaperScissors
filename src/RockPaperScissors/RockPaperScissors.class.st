@@ -15,8 +15,8 @@ assert: result equals: #paper
 Class {
 	#name : 'RockPaperScissors',
 	#superclass : 'Object',
-	#category : 'StonePaperScissors',
-	#package : 'StonePaperScissors'
+	#category : 'RockPaperScissors',
+	#package : 'RockPaperScissors'
 }
 
 { #category : 'playing' }
