@@ -23,7 +23,8 @@ Class {
 RockPaperScissors >> play: first against: second [
 	
 	first = second ifTrue: [ ^ #draw ].
-	first = #paper ifTrue: [ ^ #paper ].
-	first = #rock ifTrue: [ ^ #paper ].
-	^ #scissors
+	first = #paper ifTrue: [ second = #scissors ifTrue: [ ^ #scissors ] ].
+	first = #rock ifTrue: [ second = #scissors ifTrue: [ ^ #rock ] ].
+	first = #scissors ifTrue: [ second = #paper ifTrue: [ ^ #scissors ] ].
+	^ #paper
 ]
