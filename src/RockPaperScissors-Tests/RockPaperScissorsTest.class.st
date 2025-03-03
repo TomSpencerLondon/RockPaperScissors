@@ -48,6 +48,14 @@ RockPaperScissorsTest >> testScissorsBeatsPaper [
 ]
 
 { #category : 'tests' }
+RockPaperScissorsTest >> testScissorsBeatsRock [
+
+	| result |
+	result := game play: #scissors against: #rock.
+	self assert: result equals: #rock
+]
+
+{ #category : 'tests' }
 RockPaperScissorsTest >> testScissorsDrawsWithScissors [
 
 	| result |
