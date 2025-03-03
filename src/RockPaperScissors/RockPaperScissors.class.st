@@ -15,9 +15,25 @@ assert: result equals: #paper
 Class {
 	#name : 'RockPaperScissors',
 	#superclass : 'Object',
+	#instVars : [
+		'rules'
+	],
 	#category : 'RockPaperScissors',
 	#package : 'RockPaperScissors'
 }
+
+{ #category : 'initialization' }
+RockPaperScissors >> initialize [
+
+	super initialize.
+	rules := {
+		         (Pair withWeaponOne: #paper weaponTwo: #rock -> #paper).
+		         (Pair
+			          withWeaponOne: #scissors
+			          weaponTwo: #paper -> #scissors).
+		         (Pair withWeaponOne: #rock weaponTwo: #scissors -> #rock) }
+		         asDictionary
+]
 
 { #category : 'playing' }
 RockPaperScissors >> play: first against: second [
