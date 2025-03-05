@@ -22,10 +22,36 @@ Pair class >> withWeaponOne: aWeapon weaponTwo: anotherWeapon [
 		  yourself
 ]
 
+{ #category : 'initialization' }
+Pair >> initializeWith: aWeapon and: anotherWeapon [
+
+   | symbols sortedSymbols |
+   symbols := {aWeapon. anotherWeapon}.
+   sortedSymbols := symbols asSortedCollection: [:a :b | a asString < b asString].
+
+   self weaponOne: sortedSymbols first.
+   self weaponTwo: sortedSymbols second.
+    
+	self initialize.
+	
+	
+	
+]
+
+{ #category : 'accessing' }
+Pair >> weaponOne [
+	^ weaponOne
+]
+
 { #category : 'accessing' }
 Pair >> weaponOne: aString [
 
 	weaponOne := aString
+]
+
+{ #category : 'accessing' }
+Pair >> weaponTwo [
+	^ weaponTwo
 ]
 
 { #category : 'accessing' }
