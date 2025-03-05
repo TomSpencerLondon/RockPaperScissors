@@ -1,3 +1,7 @@
+"
+I am a Pair class.
+I represent a combination of two weapons.
+"
 Class {
 	#name : 'Pair',
 	#superclass : 'Object',
