@@ -35,17 +35,8 @@ RockPaperScissors >> initialize [
 
 { #category : 'playing' }
 RockPaperScissors >> play: first against: second [
-	
-	(first = second) ifTrue: [ ^ #draw ].
-	
-	^ rules at: (Pair with: first and: second ).
 
-"	first = second ifTrue: [ ^ #draw ].
-	first = #paper ifTrue: [ second = #scissors ifTrue: [ ^ #scissors ] ].
-	first = #rock ifTrue: [ second = #scissors ifTrue: [ ^ #rock ] ].
-	first = #scissors ifTrue: [
-		second = #paper
-			ifTrue: [ ^ #scissors ]
-			ifFalse: [ second = #rock ifTrue: [ ^ #rock ] ] ].
-	^ #paper"
+	first = second ifTrue: [ ^ #draw ].
+
+	^ rules at: (Pair with: first and: second)
 ]
