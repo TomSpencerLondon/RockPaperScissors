@@ -27,21 +27,25 @@ RockPaperScissors >> initialize [
 
 	super initialize.
 	rules := {
-		         (Pair withWeaponOne: #paper weaponTwo: #rock) -> #paper.
-		         (Pair withWeaponOne: #scissors weaponTwo: #paper) -> #scissors.
-		         (Pair withWeaponOne: #rock weaponTwo: #scissors) -> #rock }
+		         (Pair with: #paper and: #rock) -> #paper.
+		         (Pair with: #scissors and: #paper) -> #scissors.
+		         (Pair with: #rock and: #scissors) -> #rock }
 		         asDictionary
 ]
 
 { #category : 'playing' }
 RockPaperScissors >> play: first against: second [
+	
+	(first = second) ifTrue: [ ^ #draw ].
+	
+	^ rules at: (Pair with: first and: second ).
 
-	first = second ifTrue: [ ^ #draw ].
+"	first = second ifTrue: [ ^ #draw ].
 	first = #paper ifTrue: [ second = #scissors ifTrue: [ ^ #scissors ] ].
 	first = #rock ifTrue: [ second = #scissors ifTrue: [ ^ #rock ] ].
 	first = #scissors ifTrue: [
 		second = #paper
 			ifTrue: [ ^ #scissors ]
 			ifFalse: [ second = #rock ifTrue: [ ^ #rock ] ] ].
-	^ #paper
+	^ #paper"
 ]

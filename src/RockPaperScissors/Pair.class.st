@@ -13,29 +13,45 @@ Class {
 	#package : 'RockPaperScissors'
 }
 
-{ #category : 'as yet unclassified' }
-Pair class >> withWeaponOne: aWeapon weaponTwo: anotherWeapon [
+{ #category : 'private' }
+Pair class >> with: aWeapon and: anotherWeapon [
 
+	| sortedSymbols |
+	sortedSymbols := {
+		                 aWeapon.
+		                 anotherWeapon } asSortedCollection.
 	^ self new
-		  weaponOne: aWeapon;
-		  weaponTwo: anotherWeapon;
-		  yourself
+		  weaponOne: sortedSymbols first;
+		  weaponTwo: sortedSymbols second
+]
+
+{ #category : 'comparing' }
+Pair >> = anObject [
+	"Answer whether the receiver and anObject represent the same object."
+
+	self == anObject ifTrue: [ ^ true ].
+	self class = anObject class ifFalse: [ ^ false ].
+	^ weaponTwo = anObject weaponTwo and: [
+		  weaponOne = anObject weaponOne ]
+]
+
+{ #category : 'comparing' }
+Pair >> hash [
+	"Answer an integer value that is related to the identity of the receiver."
+
+	^ weaponTwo hash bitXor: weaponOne hash
 ]
 
 { #category : 'initialization' }
 Pair >> initializeWith: aWeapon and: anotherWeapon [
 
-   | symbols sortedSymbols |
-   symbols := {aWeapon. anotherWeapon}.
-   sortedSymbols := symbols asSortedCollection: [:a :b | a asString < b asString].
+	| sortedSymbols |
+	sortedSymbols := {
+		                 aWeapon.
+		                 anotherWeapon } asSortedCollection.
 
-   self weaponOne: sortedSymbols first.
-   self weaponTwo: sortedSymbols second.
-    
-	self initialize.
-	
-	
-	
+	self weaponOne: sortedSymbols first.
+	self weaponTwo: sortedSymbols second.
 ]
 
 { #category : 'accessing' }

@@ -9,7 +9,7 @@ Class {
 PairTest >> testWeaponOrderIsAlphabetic [
 
 	| pair |
-	pair := Pair new initializeWith: #scissors and: #rock.
+	pair := Pair with: #scissors and: #rock.
 	self assert: pair weaponOne equals: #rock.
 	self assert: pair weaponTwo equals: #scissors
 ]
