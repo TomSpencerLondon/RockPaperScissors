@@ -16,6 +16,14 @@ RockPaperScissorsTest >> setUp [
 ]
 
 { #category : 'tests' }
+RockPaperScissorsTest >> testLizardsBeatsPaper [
+
+	| result |
+	result := game play: #lizard against: #paper.
+	self assert: result equals: #lizard
+]
+
+{ #category : 'tests' }
 RockPaperScissorsTest >> testPaperBeatsRock [
 
 	| result |
