@@ -30,7 +30,8 @@ RockPaperScissors >> initialize [
 		         (Pair with: #paper and: #rock) -> #paper.
 		         (Pair with: #scissors and: #paper) -> #scissors.
 		         (Pair with: #rock and: #scissors) -> #rock.
-					(Pair with: #lizard and: #paper) -> #lizard }
+					(Pair with: #lizard and: #paper) -> #lizard.
+					(Pair with: #rock and: #lizard) -> #rock }
 		         asDictionary
 ]
 
