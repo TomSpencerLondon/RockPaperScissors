@@ -19,7 +19,7 @@ RockPaperScissorsTest >> setUp [
 RockPaperScissorsTest >> testLizardBeatsPaper [
 
 	| result |
-	result := game play: #lizard against: #paper.
+	result := game play: (Lizard new) against: (Paper new).
 	self assert: result equals: #lizard
 ]
 
@@ -27,7 +27,7 @@ RockPaperScissorsTest >> testLizardBeatsPaper [
 RockPaperScissorsTest >> testPaperBeatsRock [
 
 	| result |
-	result := game play: #paper against: #rock.
+	result := game play: (Paper new) against: (Rock new).
 	self assert: result equals: #paper
 ]
 
@@ -35,7 +35,7 @@ RockPaperScissorsTest >> testPaperBeatsRock [
 RockPaperScissorsTest >> testPaperIsBeatenByScissors [
 
 	| result |
-	result := game play: #paper against: #scissors.
+	result := game play: (Paper new) against: (Scissors new).
 	self assert: result equals: #scissors
 ]
 
@@ -43,7 +43,7 @@ RockPaperScissorsTest >> testPaperIsBeatenByScissors [
 RockPaperScissorsTest >> testRockBeatsLizard [
 
 	| result |
-	result := game play: #rock against: #lizard.
+	result := game play: (Rock new) against: (Lizard new).
 	self assert: result equals: #rock
 ]
 
@@ -51,7 +51,7 @@ RockPaperScissorsTest >> testRockBeatsLizard [
 RockPaperScissorsTest >> testRockIsBeatenByPaper [
 
 	| result |
-	result := game play: #rock against: #paper.
+	result := game play: (Rock new) against: (Paper new).
 	self assert: result equals: #paper
 ]
 
@@ -59,7 +59,7 @@ RockPaperScissorsTest >> testRockIsBeatenByPaper [
 RockPaperScissorsTest >> testScissorsBeatsPaper [
 
 	| result |
-	result := game play: #scissors against: #paper.
+	result := game play: (Scissors new) against: (Paper new).
 	self assert: result equals: #scissors
 ]
 
@@ -67,7 +67,7 @@ RockPaperScissorsTest >> testScissorsBeatsPaper [
 RockPaperScissorsTest >> testScissorsBeatsRock [
 
 	| result |
-	result := game play: #scissors against: #rock.
+	result := game play: (Scissors new) against: (Rock new).
 	self assert: result equals: #rock
 ]
 
@@ -75,7 +75,7 @@ RockPaperScissorsTest >> testScissorsBeatsRock [
 RockPaperScissorsTest >> testScissorsDrawsWithScissors [
 
 	| result |
-	result := game play: #scissors against: #scissors.
+	result := game play: (Scissors new) against: (Scissors new).
 	self assert: result equals: #draw
 ]
 
@@ -83,7 +83,7 @@ RockPaperScissorsTest >> testScissorsDrawsWithScissors [
 RockPaperScissorsTest >> testScissorsIsBeatenBy [
 
 	| result |
-	result := game play: #scissors against: #rock.
+	result := game play: (Scissors new) against: (Rock new).
 	self assert: result equals: #rock
 ]
 
@@ -91,6 +91,6 @@ RockPaperScissorsTest >> testScissorsIsBeatenBy [
 RockPaperScissorsTest >> testScissorsIsBeatenByRock [
 
 	| result |
-	result := game play: #scissors against: #rock.
+	result := game play: (Scissors new) against: (Rock new).
 	self assert: result equals: #rock
 ]
